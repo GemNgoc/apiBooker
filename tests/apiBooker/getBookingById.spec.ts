@@ -3,7 +3,7 @@ import { z } from "zod";
 
 test(`get booking by id`, async ({ request }) => {
   const response = await request.get(
-    "https://restful-booker.herokuapp.com/booking/1404"
+    "https://restful-booker.herokuapp.com/booking/1"
   );
   expect(response.status()).toBe(200);
   const responseBody = await response.json();
