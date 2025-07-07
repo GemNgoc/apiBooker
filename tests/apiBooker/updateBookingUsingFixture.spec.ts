@@ -1,29 +1,17 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures/apiTokenFixture";
 
-test(`update booking`, async ({ request }) => {
+test(`update booking`, async ({ request, apiToken, bookingID }) => {
   //A: Arrange: login to get auth token
-  const createTokenRes = await request.post(
-    "https://restful-booker.herokuapp.com/auth",
-    {
-      data: { username: "admin", password: "password123" },
-    }
-  );
-
-  expect(createTokenRes.status()).toBe(200);
-  const createTokenResBody = await createTokenRes.json();
-  const token = await createTokenResBody.token;
+  //   get token from "./fixtures/apiTokenFixture", hàm này được gán vô biến apiToken
 
   //A: Arrange: get a booking id
-  const getBookingRes = await request.get(
-    "https://restful-booker.herokuapp.com/booking"
-  );
-  expect(getBookingRes.status()).toBe(200);
-  const getBookingResBody = await getBookingRes.json();
-  const bookingId = getBookingResBody[0].bookingid; //Assuming we take the first booking id for testing
+  //   get bookingID from "./fixtures/apiTokenFixture", hàm này được gán vô biến bookingID
 
   //A: Action: call request to update booking
+
+  console.log(`bookingID: ${bookingID}`);
   const updateBookingIdRes = await request.put(
-    `https://restful-booker.herokuapp.com/booking/${bookingId}`,
+    `https://restful-booker.herokuapp.com/booking/${bookingID}`,
     {
       data: {
         firstname: "FN_Buddy_updated",
@@ -35,7 +23,7 @@ test(`update booking`, async ({ request }) => {
       },
       headers: {
         // "Content-Type": "application/json",
-        Cookie: `token=${token}`, // Include the auth token in the request headers
+        Cookie: `token=${apiToken}`, // Include the auth token in the request headers
       },
     }
   );
