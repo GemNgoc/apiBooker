@@ -1,12 +1,12 @@
-import { test as baseTest, expect } from "@playwright/test";
+import { test as setup, expect } from "@playwright/test";
 // This file defines a fixture for Playwright tests that retrieves an API token
 // from a RESTful Booker API endpoint and makes it available to tests.
-type AuthFixture = {
+type BookingFixture = {
   apiToken: string | null;
   bookingID: number | null;
 };
 
-export const test = baseTest.extend<AuthFixture>({
+export const test = setup.extend<BookingFixture>({
   apiToken: async ({ request }, use) => {
     const createTokenRes = await request.post(
       "https://restful-booker.herokuapp.com/auth",
