@@ -10,11 +10,11 @@ test.describe("Dropdown using Class Fixture", () => {
     await dropdownListPage.selectOptionByLabel("Option 1");
 
     // Validate "option 1" is selected
-    await expect(dropdownListPage.dropdown).toHaveValue("1");
+    expect(dropdownListPage.dropdown).toHaveValue("1");
 
     // Tra ve option 0
     await dropdownListPage.selectOptionByValue("");
-    await expect(dropdownListPage.dropdown).toHaveValue("");
+    expect(dropdownListPage.dropdown).toHaveValue("");
   });
 
   test("able to select dropdown by value", async ({ dropdownListPage }) => {
@@ -22,10 +22,10 @@ test.describe("Dropdown using Class Fixture", () => {
     await dropdownListPage.selectOptionByValue("2");
 
     // Validate "option 2" is selected
-    await expect(dropdownListPage.dropdown).toHaveValue("2");
+    expect(dropdownListPage.dropdown).toHaveValue("2");
 
     // Tra ve option 0
     await dropdownListPage.selectOptionByValue("");
-    await expect(dropdownListPage.dropdown).toHaveValue("");
+    expect(dropdownListPage.dropdown).toHaveValue("");
   });
 });

@@ -21,7 +21,7 @@ export class DropdownListPage {
     await this.dropdown.selectOption(value);
   }
 
-  async getSelectedValue(): Promise<string> {
-    return await this.dropdown.inputValue();
+  getSelectedValue(): Promise<string> {
+    return this.dropdown.inputValue();
   }
 }
