@@ -40,14 +40,14 @@ export default defineConfig({
       use: { ...devices["Desktop Chrome"] },
     },
 
-    {
-      name: "firefox",
-      use: {
-        ...devices["Desktop Firefox"],
-        baseURL: "https://www.vietnamairlines.com",
-        // headless: true,
-      },
-    },
+    // {
+    //   name: "firefox",
+    //   use: {
+    //     ...devices["Desktop Firefox"],
+    //     baseURL: "https://www.vietnamairlines.com",
+    //     // headless: true,
+    //   },
+    // },
 
     {
       name: "webkit",

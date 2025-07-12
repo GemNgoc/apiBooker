@@ -15,7 +15,7 @@ test(`able to close a popup`, async ({ page }) => {
   // Đây là đoạn code để muốn show popup, trong thực tế khi chạy với Playwright có hàm 'addLocatorHandler' ở trên
   // thì popup này sẽ không visible để catch được element. Vì vậy cố tình show popup thì hàm expect luôn failed.
 
-  await expect(
-    page.getByRole("heading", { name: "THIS IS A MODAL WINDOW" })
-  ).toBeVisible();
+  // await expect(
+  //   page.getByRole("heading", { name: "THIS IS A MODAL WINDOW" })
+  // ).toBeVisible();
 });

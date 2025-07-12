@@ -13,6 +13,8 @@ test("able to check broken image", async ({ page }) => {
     const res = await page.request.get(
       "https://the-internet.herokuapp.com/" + imgSrc
     );
+    //TC này đang kiểm tra broken image hay không 
+    // nên việc trả ra status không là 200 chứng tỏ ảnh đang bị broken và cần báo bug
     expect(res.status()).toBe(200); // ảnh không bi broken thì trả về status 200
   }
 });
