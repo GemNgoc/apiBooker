@@ -1,7 +1,8 @@
 import { test as base } from "@playwright/test";
 import { LoginPage } from "../pages/login.page";
 import { CheckboxPage } from "../pages/checkbox.page";
-import { DropdownListPage } from "../pages/dropdownlist.page";
+// import { DropdownListPage } from "../pages/dropdownlist.page";
+import { DropdownListPage } from "../pages/dropdownList.page";
 import { DropdownAreaPage } from "../pages/dropdownArea.page";
 import { HyperlinkPage } from "../pages/hyperlink.page";
 import { FramePage } from "../pages/frame.page";
