@@ -25,10 +25,4 @@ export class CheckboxPage {
   async uncheckCheckbox2() {
     await this.checkbox2.uncheck();
   }
-  //   async isCheckbox1Checked(): Promise<boolean> {
-  //     return await this.checkbox1.isChecked();
-  //   }
-  //   async isCheckbox2Checked(): Promise<boolean> {
-  //     return await this.checkbox2.isChecked();
-  //   }
 }

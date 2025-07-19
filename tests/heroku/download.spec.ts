@@ -16,6 +16,7 @@ test(`download a file`, async ({ page }) => {
 
   //Save As file
   const filePath = "download/" + suggestedFilename;
+  console.log(`Saving file to: ${filePath}`);
   await downloadFile.saveAs(filePath);
   expect(fs.existsSync(filePath)).toBeTruthy();
 });
@@ -23,7 +24,7 @@ test(`download a file`, async ({ page }) => {
 test(`download multiple files`, async ({ page }) => {
   await page.goto("/download");
 
-  const fileNames = ["meoxinh.jpg", "meoxinh1.jpg"];
+  const fileNames = ["meoxinh1.jpg", "meoxinh2.jpg"];
 
   for (const fileName of fileNames) {
     //Action waitForEvent 'download'

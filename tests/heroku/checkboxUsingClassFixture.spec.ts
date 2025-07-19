@@ -1,6 +1,6 @@
 import { test, expect } from "./fixtures/heroku.fixture";
 
-test(`able checkbox by CSS`, async ({ checkboxPage }) => {
+test(`able checkbox by CSS using Class Fixture`, async ({ checkboxPage }) => {
   //Navigate to https://the-internet.herokuapp.com/checkboxes
   await checkboxPage.goto();
 
@@ -10,9 +10,7 @@ test(`able checkbox by CSS`, async ({ checkboxPage }) => {
   //UnCheck on checkbox2
   await checkboxPage.uncheckCheckbox2();
 
-  //Verify checkbox 1 checked, checkbox 2 unchecked
-  //   await expect(checkboxPage.isCheckbox1Checked()).toBeTruthy();
-  //   await expect(checkboxPage.isCheckbox2Checked()).toBeFalsy();//-->hàm này chạy get failed with tobeFalsy
+  //Verify checkbox1 is checked and checkbox2 is unchecked
   await expect(checkboxPage.checkbox1).toBeChecked();
   await expect(checkboxPage.checkbox2).not.toBeChecked();
 });

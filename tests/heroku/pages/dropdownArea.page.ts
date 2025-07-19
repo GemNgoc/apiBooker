@@ -16,8 +16,4 @@ export class DropdownAreaPage {
   async selectFruits(fruits: string[]) {
     await this.fruitsDropdown.selectOption(fruits);
   }
-
-  async getSelectedFruits(): Promise<string> {
-    return this.fruitsDropdown.inputValue();
-  }
 }

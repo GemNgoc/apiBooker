@@ -10,7 +10,7 @@ const dataSet = [
 ];
 
 dataSet.forEach((data) => {
-  test(`Check login page with username: ${data.username} and password: ${data.password}`, async ({
+  test(`Check login page using Class Fixture with username: ${data.username} and password: ${data.password}`, async ({
     page,
     loginPage,
   }) => {

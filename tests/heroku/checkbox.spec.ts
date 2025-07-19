@@ -22,8 +22,10 @@ test(`able checkbox by CSS`, async ({ page }) => {
     .uncheck();
 
   //Verify checkbox 1 checked, checkbox 2 unchecked
-  await expect(page.locator("#checkboxes > input[type=checkbox]:nth-child(1)"))
-    .toBeChecked;
+  await expect(
+    page.locator("#checkboxes > input[type=checkbox]:nth-child(1)")
+  ).toBeChecked();
+
   await expect(
     page.locator("#checkboxes > input[type=checkbox]:nth-child(3)")
   ).not.toBeChecked();

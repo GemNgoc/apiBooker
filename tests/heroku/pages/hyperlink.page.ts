@@ -2,12 +2,19 @@ import { Page, Locator } from "@playwright/test";
 
 export class HyperlinkPage {
   readonly page: Page;
-  readonly statusCodesLink: Locator;
+  // readonly statusCodesLink: Locator;
   readonly GoHere: Locator;
 
   constructor(page: Page) {
     this.page = page;
-    this.statusCodesLink;
+
+    /* Không khai báo ở đây, 
+    vì nó sẽ được sử dụng trong phương thức clickStatusCode
+    vì locator này giống nhau cho các status code, 
+    chỉ khác nhau ở phần name
+    
+    // this.statusCodesLink; 
+    */
     this.GoHere = page.getByRole("link", { name: "here" });
   }
 
